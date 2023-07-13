@@ -1,0 +1,72 @@
+<pre>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        #card {
+            background-color: #fff;
+            width: 80%;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+        }
+        
+        #card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        h1 {
+            color: #ff4d4d;
+        }
+        
+        p {
+            color: #333;
+        }
+        
+        button {
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="card" class="show">
+        <h1>Happy Birthday, Emmanuel Chijindu Okpu!</h1>
+        <p>I hope your special day is filled with joy, laughter, remarkable achievements and wonderful memories.</p>
+        <p>May all your dreams and wishes come true!</p>
+        <p>Best wishes from your Somebody.</p>
+        <button onclick="playMusic()">Play Birthday Song</button>
+    </div>
+
+    <script>
+        function playMusic() {
+            var audio = new Audio('birthday_song.mp3');
+            audio.play();
+        }
+
+        // Show the card with animation when the page is loaded
+        window.addEventListener('load', function() {
+            var card = document.getElementById('card');
+            card.classList.add('show');
+        });
+    </script>
+</body>
+</html>
+</pre>
