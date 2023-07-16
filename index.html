@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Happy Birthday!</title>
+    <title>Happy Birthday, Favy!</title>
     <style>
         body {
             background-color: #f7f7f7;
@@ -13,17 +13,45 @@
         }
         
         #card {
-            background-color: #34495e;
+            background-color: #ff69b4;
             width: 720px;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: cardAnimation 0.5s ease-out forwards;
+        }
+        
+        @keyframes cardAnimation {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
         
         h1 {
             color: #fff;
             font-size: 36px;
             margin-top: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: headingAnimation 1s ease-in-out infinite;
+        }
+        
+        @keyframes headingAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
         
         p {
@@ -34,7 +62,7 @@
         
         button {
             background-color: #fff;
-            color: #34495e;
+            color: #ff69b4;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
@@ -44,24 +72,31 @@
         }
         
         button:hover {
-            background-color: #ecf0f1;
+            background-color: #ffecb3;
         }
     </style>
 </head>
 <body>
     <div id="card">
-        <h1>Happy Birthday, Emmanuel Chijindu Okpu!</h1>
-        <p>Wishing you a day filled with joy, laughter, and success.</p>
-        <p>May all your dreams and aspirations come true!</p>
-        <p>Best wishes from your friend.</p>
+        <h1>Happy Birthday, Favy!</h1>
+        <p>Wishing you a day filled with joy, love, and happiness.</p>
+        <p>May this year bring you success and fulfill all your dreams!</p>
+        <p>Keep counting your days in Lord, Jesus Christ</p>
         <button onclick="playMusic()">Play Birthday Song</button>
     </div>
 
     <script>
         function playMusic() {
-            var audio = new Audio('birthday_song.mp3');
+            var audio = new Audio('birthday_song1.mp3');
             audio.play();
         }
+        
+        // Show the card with animation when the page is loaded
+        window.addEventListener('load', function() {
+            var card = document.getElementById('card');
+            card.style.opacity = 1;
+            card.style.transform = 'scale(1)';
+        });
     </script>
 </body>
 </html>
